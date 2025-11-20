@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-console.log('type in type script');
-let sales = 123_456_789;
-let course = 'TypeScript';
-let is_published = true;
-let x = true;
+console.log('type any  in type script');
 let level;
-console.log(sales);
-console.log(course);
-console.log(is_published);
+level = 1;
+level = '';
+level = true;
+function render(document) {
+    console.log(document);
+}
+render('alpha');
 //# sourceMappingURL=index.js.map

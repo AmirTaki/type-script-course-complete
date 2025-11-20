@@ -29,3 +29,5 @@ Debugging:
 file Launch.json =>      
     "preLaunchTask": "tsc: build - tsconfig.json",
 
+any : 
+1- noImplicitAny: true

@@ -45,5 +45,7 @@
 
     "removeComments": true,
     "noEmitOnError": true,
+
+    "noImplicitAny": true
   }
 }

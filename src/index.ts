@@ -1,13 +1,16 @@
-console.log('type in type script')
-
-let sales: number = 123_456_789
-let course: string = 'TypeScript'
-let is_published: boolean = true
-
-let x = true; // boolean
+console.log('type any  in type script')
 
 let level;  // any
 
-console.log(sales)
-console.log(course)
-console.log(is_published)
+level = 1;
+
+level = ''
+
+level = true
+
+
+function render (document: any) {
+    console.log(document)
+}
+
+render('alpha')
