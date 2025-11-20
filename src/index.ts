@@ -1,10 +1,6 @@
-console.log('typeScript')
+// Debugging
+let age:number = 30
+if (age < 50) 
+    age += 10;
 
-// comments
-
-let numbers: number = 12;
-console.log(numbers)
-
-numbers = 'ts'
-console.log(numbers)
-
+console.log(age)

@@ -1,5 +1,6 @@
 type script : 
-youtube : https://www.youtube.com/watch?v=ECR36qoVXvY&list=PLTEzTFAAzxQ6yvftZpvM2LJCv6b4zYVhJ
+youtube : 
+https://www.youtube.com/watch?v=ECR36qoVXvY&list=PLTEzTFAAzxQ6yvftZpvM2LJCv6b4zYVhJ
 
 
 install : 
@@ -12,11 +13,18 @@ run :
 Configuring the TypeScript Compiler
 1- tsc --init
 
-موارد مهم Configuring :
 
+موارد مهم Configuring :
 1- target : 
 2- module : 
 3- "rootDir": "./src",
 4- "outDir": "./dist",
 5- removeComments : true
 6- noEmitOnError: true
+
+Debugging:
+"sourceMap": true,
+
+file Launch.json =>      
+    "preLaunchTask": "tsc: build - tsconfig.json",
+
