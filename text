@@ -1,0 +1,12 @@
+type script : 
+youtube : https://www.youtube.com/watch?v=ECR36qoVXvY&list=PLTEzTFAAzxQ6yvftZpvM2LJCv6b4zYVhJ
+
+
+install : 
+1- npm i -g typescript
+2- tsc -v
+
+run :
+1- tsc namefile.ts
+
+
