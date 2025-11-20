@@ -9,4 +9,14 @@ install :
 run :
 1- tsc namefile.ts
 
+Configuring the TypeScript Compiler
+1- tsc --init
 
+موارد مهم Configuring :
+
+1- target : 
+2- module : 
+3- "rootDir": "./src",
+4- "outDir": "./dist",
+5- removeComments : true
+6- noEmitOnError: true
