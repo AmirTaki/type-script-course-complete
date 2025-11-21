@@ -1,13 +1,14 @@
-console.log('optional chain in type script')
+console.log('nullish operator in type script')
 
-// optional call operator
+// let speed: number | null = null;
+let speed: number | null | undefined = 0;
 
-let log: any = (message: string) => {
-    console.log(message)
-} 
+let ride = {
+    // speed: speed || 30
+    // speed : speed !== null ? speed : 30
+    speed : speed ?? 30
+}
 
-log('message')
+console.log(ride.speed)
 
-let loge: any = null
-
-loge?.('a')
+// Nullish coalescing operator (??)

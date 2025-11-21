@@ -1,10 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-console.log('optional chain in type script');
-let log = (message) => {
-    console.log(message);
+console.log('nullish operator in type script');
+let speed = 0;
+let ride = {
+    speed: speed ?? 30
 };
-log('message');
-let loge = null;
-loge?.('a');
+console.log(ride.speed);
 //# sourceMappingURL=index.js.map
