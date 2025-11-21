@@ -1,22 +1,16 @@
-console.log('Array  in type script')
+console.log('Tupple  in type script')
 
-let numbers = [1, 2, 3, 4, 'a', true]
+// let varibleArray: number[] = [value]
 
-console.log(numbers)
+// let varibleTupple: [number, string] = [value, value]
 
-let arrayNumber: number[] = [1, 2, 3, 4]
+let user: [number, string] = [1, 'a']
 
-let arrayString: string[] = ['a', 'b', 'c']
+console.log(user[0].toFixed(4))
 
-let nubStrArr: (number | string)[] = [1, 'a', 2, 'b', 3, 'c']
+console.log(user[1].concat('mir'))
 
-let anyArray = []
-anyArray[0] = 1;
-anyArray[1] = '1'
-anyArray[2] = true
-console.log(anyArray)
+user.push('alpha')   //  نقطه کور جاوااسکریپت 
 
+console.log(user)
 
-arrayNumber.forEach((n => 
-    console.log(n.valueOf())
-))
