@@ -1,24 +1,21 @@
-console.log('Functions in type script')
+console.log('Object in type script')
 
 
-function calcutateTax (income: number, taxYear: number = 2022): number  {
-    // let x; varibles
-    if((taxYear ) < 2020){
-        return income * 1.2
+
+let employee: {
+    readonly id : number,
+    name?: string,  
+    retire : (date: Date) => void
+
+
+} = {
+    id: 1,
+    // name : ''
+    retire : (Date: Date) => {
+        console.log(Date)
     }
-    return income * 3.1
 }
 
-console.log(calcutateTax(100_000,  ))
-
-
-
-
-
-const calcutateTax2 = (income: number, taxYear ?: number): number => {
-    if(taxYear  || 10 < 2022){
-        return income
-    }
-    return 0
-}
-console.log(calcutateTax2(1222))
+employee.name = "amir"
+// employee.id = 2   readonly
+console.log(employee)
