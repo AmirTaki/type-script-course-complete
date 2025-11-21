@@ -1,8 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-console.log('type assertion in type script');
-let phone = document.getElementById('phone');
-console.log(phone.value);
-let text = document.getElementById("text");
-console.log(text.value);
+console.log('type unknown in type script');
+function render2(document) {
+    if (typeof document === 'string') {
+        document.concat('ir');
+    }
+}
+console.log(render2('am'));
 //# sourceMappingURL=index.js.map

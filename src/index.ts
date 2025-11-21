@@ -1,9 +1,17 @@
-console.log('type assertion in type script')
+console.log('type unknown in type script')
 
-let phone  = document.getElementById('phone') as HTMLInputElement;
+// function render(document: any) {
+//     document.anythin()
+// }
 
-console.log(phone.value)
 
+function render2(document: unknown){
+    if(typeof document === 'string'){
+        document.concat('ir')
+    }
+}
+console.log(render2('am'))
 
-let text = <HTMLInputElement> document.getElementById("text");
-console.log(text.value)
+// inmportant
+
+// if(document instanceof WordDocumnet)
