@@ -15,3 +15,13 @@ console.log(customer?.birthday?.getFullYear())
 let customer1 = getCounstomer(1)
 console.log(customer1?.birthday?.getFullYear())
 
+// optional element access operator
+const arrayCustomer:number[] = [1, 2, 3, 4]
+
+
+if(arrayCustomer !== null && arrayCustomer !== undefined) {
+    console.log(arrayCustomer[5])
+} 
+
+console.log(arrayCustomer?.[5])
+console.log(arrayCustomer?.[2])
