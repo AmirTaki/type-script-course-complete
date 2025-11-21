@@ -1,12 +1,12 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-console.log('Object in type script');
-let employee = {
-    id: 1,
-    name: 'tilan',
-    retire: (date) => {
-        console.log(date);
+console.log('Union in type script');
+function kgToLbs(weight) {
+    if (typeof weight === 'string') {
+        return parseInt(weight) * 2.2;
     }
-};
-console.log(employee);
+    return weight * 2.2;
+}
+console.log(kgToLbs(10));
+console.log(kgToLbs("200"));
 //# sourceMappingURL=index.js.map

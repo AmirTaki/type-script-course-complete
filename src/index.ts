@@ -1,18 +1,14 @@
-console.log('Object in type script')
+console.log('Union in type script')
 
-
-type Employee = {
-    readonly id: number,
-    name : string,
-    retire: (date : Date) => void
-}
-
-
-let employee: Employee = {
-    id : 1, 
-    name : 'tilan',
-    retire: (date: Date) => {
-        console.log(date)
+function kgToLbs (weight: number | string): number {
+    // narrowing
+    if(typeof weight  === 'string'){
+        // return Number(weight ) * 2.2
+        return parseInt(weight) * 2.2
     }
+    return weight * 2.2;
+
 }
-console.log(employee)
+console.log(kgToLbs(10))
+console.log(kgToLbs("200"))
+
