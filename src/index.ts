@@ -1,14 +1,9 @@
-console.log('nullish operator in type script')
+console.log('type assertion in type script')
 
-// let speed: number | null = null;
-let speed: number | null | undefined = 0;
+let phone  = document.getElementById('phone') as HTMLInputElement;
 
-let ride = {
-    // speed: speed || 30
-    // speed : speed !== null ? speed : 30
-    speed : speed ?? 30
-}
+console.log(phone.value)
 
-console.log(ride.speed)
 
-// Nullish coalescing operator (??)
+let text = <HTMLInputElement> document.getElementById("text");
+console.log(text.value)

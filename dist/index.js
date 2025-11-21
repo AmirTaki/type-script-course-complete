@@ -1,9 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-console.log('nullish operator in type script');
-let speed = 0;
-let ride = {
-    speed: speed ?? 30
-};
-console.log(ride.speed);
+console.log('type assertion in type script');
+let phone = document.getElementById('phone');
+console.log(phone.value);
+let text = document.getElementById("text");
+console.log(text.value);
 //# sourceMappingURL=index.js.map
