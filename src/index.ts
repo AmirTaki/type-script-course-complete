@@ -1,9 +1,4 @@
-console.log('Class construction in TypeScript')
-
-
-// An object is a product of a class.
-
-// In object-oriented programming, we have a concept called class, which allows us to create as many objects as we want using a class.
+console.log('Object creation in TypeScript')
 
 class Account {
     id: number ;
@@ -27,7 +22,16 @@ class Account {
     }
 }
 
-Account
+const account =  new Account(1, 'amir', 0);
 
+console.log(account)
 
-// object === instance
+console.log(account.name)
+
+account.deposite(100)
+
+console.log(account.balance)
+
+console.log(typeof account)
+
+console.log(account instanceof Account)
