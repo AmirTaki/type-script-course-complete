@@ -1,14 +1,16 @@
-console.log('type Enum   in type script')
-
-// const small = "s"
-// const medium = 'm'
-// const large = "l"
+console.log('Functions in type script')
 
 
-// value default = 0 ,1, 2, .......
+function calcutateTax (income: number): number  {
+    if(income < 50_000){
+        return income * 1.2
+    }
+    return income * 3.1
+}
 
-enum Size {Small = 'S', Medium = 'M', Large = 'L'}
+console.log(calcutateTax(100_000))
 
-let mySize: Size = Size.Medium
-
-console.log(mySize)
+const calcutateTax2 = (income: number): number => {
+    console.log(income)
+    return 0
+}
