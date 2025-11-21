@@ -1,16 +1,22 @@
-console.log('type any  in type script')
+console.log('Array  in type script')
 
-let level;  // any
+let numbers = [1, 2, 3, 4, 'a', true]
 
-level = 1;
+console.log(numbers)
 
-level = ''
+let arrayNumber: number[] = [1, 2, 3, 4]
 
-level = true
+let arrayString: string[] = ['a', 'b', 'c']
+
+let nubStrArr: (number | string)[] = [1, 'a', 2, 'b', 3, 'c']
+
+let anyArray = []
+anyArray[0] = 1;
+anyArray[1] = '1'
+anyArray[2] = true
+console.log(anyArray)
 
 
-function render (document: any) {
-    console.log(document)
-}
-
-render('alpha')
+arrayNumber.forEach((n => 
+    console.log(n.valueOf())
+))
