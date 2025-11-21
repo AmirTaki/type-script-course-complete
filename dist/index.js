@@ -1,10 +1,4 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-console.log('type never in type script');
-function processEvents() {
-    while (true) {
-    }
-}
-processEvents();
-console.log('hey');
+console.log(' Object-Orientation in TypeScript');
 //# sourceMappingURL=index.js.map
