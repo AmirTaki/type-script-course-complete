@@ -1,19 +1,17 @@
-console.log('literal in type script')
+console.log('Nullable in type script')
 
-let quantity: 50 | 100 = 50
+function greet (name: string | null | undefined ){
+    if(typeof(name) === "string" ){
+        console.log(name.toUpperCase())
+    }
+    else 
+        console.log('invalid argument')
+}
 
-console.log(quantity)
-quantity = 100
-console.log(quantity)
+greet('helloword')
+greet(null)
+greet(undefined)
 
 
 
-type Qauntity = 50 | 100
 
-let value:Qauntity =  100
-console.log(value)
-
-type Metric = "cm" | "inch"
-
-let size: Metric = 'cm'
-console.log(size)

@@ -48,6 +48,7 @@
 
     "noImplicitAny": true,
 
-    "noUnusedParameters": true
+    "noUnusedParameters": true,
+    "strictNullChecks": true
   }
 }

@@ -1,12 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-console.log('literal in type script');
-let quantity = 50;
-console.log(quantity);
-quantity = 100;
-console.log(quantity);
-let value = 100;
-console.log(value);
-let size = 'cm';
-console.log(size);
+console.log('Nullable in type script');
+function greet(name) {
+    if (typeof (name) === "string") {
+        console.log(name.toUpperCase());
+    }
+    else
+        console.log('invalid argument');
+}
+greet('helloword');
+greet(null);
+greet(undefined);
 //# sourceMappingURL=index.js.map

@@ -37,3 +37,8 @@ function :
 paramers in function : 1- noUnusedParameters: true,  
 return in function   : 2- noImplicitReturns": true, 
 varible in function  : 3- noUnusedLocals: true
+
+
+Nullable types:
+"exactOptionalPropertyTypes": true,
+"strictNullChecks": true
