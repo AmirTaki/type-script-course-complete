@@ -1,14 +1,22 @@
-console.log('Union in type script')
+console.log('intersection in type script')
 
-function kgToLbs (weight: number | string): number {
-    // narrowing
-    if(typeof weight  === 'string'){
-        // return Number(weight ) * 2.2
-        return parseInt(weight) * 2.2
-    }
-    return weight * 2.2;
+// let weight: number & string 
 
+type Draggable = {
+    drag: () => void
 }
-console.log(kgToLbs(10))
-console.log(kgToLbs("200"))
 
+
+type Resizable = {
+    resize: () => void
+}
+
+
+type UIWidget = Draggable & Resizable;
+
+let textBox: UIWidget = {
+    drag : () => {},
+    resize : () => {}
+}
+
+console.log(textBox)
