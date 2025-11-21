@@ -1,17 +1,20 @@
-console.log('Nullable in type script')
+console.log('optional chain in type script')
 
-function greet (name: string | null | undefined ){
-    if(typeof(name) === "string" ){
-        console.log(name.toUpperCase())
-    }
-    else 
-        console.log('invalid argument')
+type Customer = {
+    birthday: Date
 }
 
-greet('helloword')
-greet(null)
-greet(undefined)
+const getCounstomer = (id  : number):Customer | null | undefined  => {
+    return id === 0 ? null : {birthday: new Date()}
+}
 
+let customer = getCounstomer(0)
 
+// if(customer !== null && customer !== undefined){console.log(customer.birthday)}
 
+// chaning oprator (?)     => optionalChainOprator ? optionChainOprator
+console.log(customer?.birthday)
+
+let customer1 = getCounstomer(0)
+console.log(customer1?.birthday)
 
