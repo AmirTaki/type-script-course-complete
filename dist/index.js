@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 console.log('Functions in type script');
 function calcutateTax(income) {
+    let x;
     if (income < 50_000) {
         return income * 1.2;
     }

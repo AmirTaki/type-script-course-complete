@@ -2,6 +2,7 @@ console.log('Functions in type script')
 
 
 function calcutateTax (income: number): number  {
+    // let x; varibles
     if(income < 50_000){
         return income * 1.2
     }
@@ -9,6 +10,10 @@ function calcutateTax (income: number): number  {
 }
 
 console.log(calcutateTax(100_000))
+
+
+
+
 
 const calcutateTax2 = (income: number): number => {
     console.log(income)
