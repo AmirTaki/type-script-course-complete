@@ -1,21 +1,18 @@
 console.log('Object in type script')
 
 
-
-let employee: {
-    readonly id : number,
-    name?: string,  
-    retire : (date: Date) => void
-
-
-} = {
-    id: 1,
-    // name : ''
-    retire : (Date: Date) => {
-        console.log(Date)
-    }
+type Employee = {
+    readonly id: number,
+    name : string,
+    retire: (date : Date) => void
 }
 
-employee.name = "amir"
-// employee.id = 2   readonly
+
+let employee: Employee = {
+    id : 1, 
+    name : 'tilan',
+    retire: (date: Date) => {
+        console.log(date)
+    }
+}
 console.log(employee)
