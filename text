@@ -31,3 +31,7 @@ file Launch.json =>
 
 any : 
 1- noImplicitAny: true
+
+
+function :
+1- noUnusedParameters: true

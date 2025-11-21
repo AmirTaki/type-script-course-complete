@@ -46,6 +46,8 @@
     "removeComments": true,
     "noEmitOnError": true,
 
-    "noImplicitAny": true
+    "noImplicitAny": true,
+
+    "noUnusedParameters": true
   }
 }

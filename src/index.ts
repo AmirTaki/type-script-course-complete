@@ -1,16 +1,14 @@
-console.log('Tupple  in type script')
+console.log('type Enum   in type script')
 
-// let varibleArray: number[] = [value]
+// const small = "s"
+// const medium = 'm'
+// const large = "l"
 
-// let varibleTupple: [number, string] = [value, value]
 
-let user: [number, string] = [1, 'a']
+// value default = 0 ,1, 2, .......
 
-console.log(user[0].toFixed(4))
+enum Size {Small = 'S', Medium = 'M', Large = 'L'}
 
-console.log(user[1].concat('mir'))
+let mySize: Size = Size.Medium
 
-user.push('alpha')   //  نقطه کور جاوااسکریپت 
-
-console.log(user)
-
+console.log(mySize)
