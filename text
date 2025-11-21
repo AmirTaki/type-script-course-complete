@@ -42,3 +42,7 @@ varible in function  : 3- noUnusedLocals: true
 Nullable types:
 "exactOptionalPropertyTypes": true,
 "strictNullChecks": true
+
+
+unknown:
+1- "allowUnreachableCode": true,

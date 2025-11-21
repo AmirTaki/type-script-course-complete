@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-console.log('type unknown in type script');
-function render2(document) {
-    if (typeof document === 'string') {
-        document.concat('ir');
+console.log('type never in type script');
+function processEvents() {
+    while (true) {
     }
 }
-console.log(render2('am'));
+processEvents();
+console.log('hey');
 //# sourceMappingURL=index.js.map
