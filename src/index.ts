@@ -1,27 +1,13 @@
 console.log('optional chain in type script')
 
-type Customer = {
-    birthday: Date
-}
+// optional call operator
 
-const getCounstomer = (id  : number):Customer | null | undefined  => {
-    return id === 0 ? null : {birthday: new Date()}
-}
-
-let customer = getCounstomer(0)
-
-console.log(customer?.birthday?.getFullYear())
-
-let customer1 = getCounstomer(1)
-console.log(customer1?.birthday?.getFullYear())
-
-// optional element access operator
-const arrayCustomer:number[] = [1, 2, 3, 4]
-
-
-if(arrayCustomer !== null && arrayCustomer !== undefined) {
-    console.log(arrayCustomer[5])
+let log: any = (message: string) => {
+    console.log(message)
 } 
 
-console.log(arrayCustomer?.[5])
-console.log(arrayCustomer?.[2])
+log('message')
+
+let loge: any = null
+
+loge?.('a')
