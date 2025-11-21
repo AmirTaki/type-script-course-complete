@@ -1,22 +1,19 @@
-console.log('intersection in type script')
+console.log('literal in type script')
 
-// let weight: number & string 
+let quantity: 50 | 100 = 50
 
-type Draggable = {
-    drag: () => void
-}
-
-
-type Resizable = {
-    resize: () => void
-}
+console.log(quantity)
+quantity = 100
+console.log(quantity)
 
 
-type UIWidget = Draggable & Resizable;
 
-let textBox: UIWidget = {
-    drag : () => {},
-    resize : () => {}
-}
+type Qauntity = 50 | 100
 
-console.log(textBox)
+let value:Qauntity =  100
+console.log(value)
+
+type Metric = "cm" | "inch"
+
+let size: Metric = 'cm'
+console.log(size)
