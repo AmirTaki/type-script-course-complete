@@ -10,11 +10,8 @@ const getCounstomer = (id  : number):Customer | null | undefined  => {
 
 let customer = getCounstomer(0)
 
-// if(customer !== null && customer !== undefined){console.log(customer.birthday)}
+console.log(customer?.birthday?.getFullYear())
 
-// chaning oprator (?)     => optionalChainOprator ? optionChainOprator
-console.log(customer?.birthday)
-
-let customer1 = getCounstomer(0)
-console.log(customer1?.birthday)
+let customer1 = getCounstomer(1)
+console.log(customer1?.birthday?.getFullYear())
 
