@@ -1,62 +1,54 @@
-console.log('Generic Interface  in TypeScript')
-
-interface Result <T>{
-    data : T | null;
-    error: string | null
-}
-
-interface User {
-    username: string;
-}
-
-interface Proudct {
-    title: string
-}
-
-const fetch =  <T> (url: string): Result<T> => {
-    url;
-    return {data: null, error :null}
-}
+console.log('Apply restrictions  in TypeScript')
 
 
-
-
-fetch<boolean>('')
-
-fetch<User>('url')
-
-fetch<Proudct>('url')
-
-
-
-
-
-
-
-
-// interface Result <T> {
-//     // data: User
-//     data: T | null,
-//     error: string | null
-// }
-
-
-// interface User {
-//     username: string;
-// }
-
-// interface Product {
-//     title: string 
-// }
-
-// function fetch <T> (url: string): Result<T> {
-//     url;
-//     return {data: null, error: null}
+// const echo = <T>(value: T):T => {
+//     return value
 // }
 
 
 
+// extends 
+function echo<T extends number | string> (value: T): T {
+    return value;
+}
 
-// fetch <User>("url")
+echo<number>(1)
+echo<string>("1")
+// echo<boolean>(true)
 
-// fetch <Product>('url')
+
+//  extend in object
+function echo2 <T extends {name: string}> (value: T): T{
+    return value;
+}
+
+echo2({name: 'amir'})
+
+
+// extend in interface
+interface Person{
+    name: string
+}
+
+function echo3 <T extends Person> (value: T): T{
+    return value;
+}
+
+echo3({name: "mani"})
+
+
+// extend in class
+class People {
+    constructor (public name : string){}
+}
+
+
+class Customer extends People{}
+
+const echo4 = <T extends People> (value: T): T => {
+    return value
+}
+
+echo4(new People('amir'))
+
+echo4(new Customer('mani'))
