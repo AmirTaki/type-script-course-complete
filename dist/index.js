@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-console.log('override the method definition in TypeScript');
+console.log('Polymorphism object in TypeScript');
 class Person {
     fistName;
     lastName;
@@ -30,7 +30,22 @@ class Teacher extends Person {
         return "Professor " + super.fullName;
     }
 }
+class Principal extends Person {
+    get fullName() {
+        return "Principal " + super.fullName;
+    }
+}
+function printNames(people) {
+    for (let person of people) {
+        console.log(person.fullName);
+    }
+}
 Student;
-const teacher = new Teacher('amir', 'taki');
-console.log(teacher.fullName);
+Teacher;
+printNames([
+    new Student(1, 'amir', 'taki'),
+    new Teacher('mani', 'saniz'),
+    new Student(2, 'raha', 'porian'),
+    new Principal('shayan', 'proina')
+]);
 //# sourceMappingURL=index.js.map

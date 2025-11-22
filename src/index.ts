@@ -1,9 +1,13 @@
-console.log('override the method definition in TypeScript')
+console.log('Polymorphism object in TypeScript')
 
 //It is inherited from a class called a parent or super.
 
 //The class it inherits from is called a child, derived, or sub.
 
+
+
+// POLYMORPHISM ::: 
+// The concept of polymorphism refers to the situation where objects can take on different shapes.
 
 class Person {
     constructor(
@@ -42,8 +46,26 @@ class Teacher extends Person {
     }
 }
 
+class Principal extends Person {
+    override get fullName() :string {
+        return "Principal " + super.fullName
+    }
+}
+
+
+function printNames (people: Person[]): void{
+    for(let person of people){
+        console.log(person.fullName)
+    }
+}
 
 Student;
 
-const teacher = new Teacher('amir', 'taki')
-console.log(teacher.fullName)
+Teacher;
+
+printNames([
+    new Student(1, 'amir', 'taki'),
+    new Teacher('mani', 'saniz'),
+    new Student(2, 'raha', 'porian'),
+    new Principal('shayan', 'proina')
+])
