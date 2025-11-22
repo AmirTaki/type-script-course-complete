@@ -1,20 +1,13 @@
-console.log('Property parameter Modifier in TypeScript')
+console.log('Getter & Setter Modifier in TypeScript')
 
 class Account {
-    // readonly id: number ;
-    // name: string;
-    nickname?: string;
-    // private _balance: number;
-    
+    nickname?: string;    
     // property
-    constructor(public readonly id: number, 
+    constructor(
+        public readonly id: number, 
         public name: string, 
         private _balance: number, 
-    ){
-        // this.id = id;
-        // this.name = name;
-        // this._balance = balance
-    }
+    ){}
     // method 
     deposite(amount: number): void {
         if(amount <= 0)
@@ -25,11 +18,18 @@ class Account {
             this._balance += amount;
         }
         
-    getBalace (): number {
+    // getter
+    get balance (): number {
         return this._balance;
     }
     
-    
+    // setter
+    set balance (value: number) {
+        if(value < 0)
+            throw new Error ('Invalid value')
+        this._balance = value
+    }
+
     private calculateTax () {
         
     }
@@ -37,8 +37,10 @@ class Account {
 
 const account =  new Account(1, 'amir', 100);
 
-account
-console.log(account.getBalace())
+console.log(account)
+account.balance = 200;
+console.log(account.balance)
+
 
 // 3 access modifier
 // 1- public 

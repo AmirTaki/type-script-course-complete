@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-console.log('Property parameter Modifier in TypeScript');
+console.log('Getter & Setter Modifier in TypeScript');
 class Account {
     id;
     name;
@@ -18,13 +18,19 @@ class Account {
         this.calculateTax();
         this._balance += amount;
     }
-    getBalace() {
+    get balance() {
         return this._balance;
+    }
+    set balance(value) {
+        if (value < 0)
+            throw new Error('Invalid value');
+        this._balance = value;
     }
     calculateTax() {
     }
 }
 const account = new Account(1, 'amir', 100);
-account;
-console.log(account.getBalace());
+console.log(account);
+account.balance = 200;
+console.log(account.balance);
 //# sourceMappingURL=index.js.map
