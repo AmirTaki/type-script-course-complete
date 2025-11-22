@@ -1,52 +1,22 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-console.log('protected Modifire in TypeScript');
-class Person {
-    fistName;
-    lastName;
-    constructor(fistName, lastName) {
-        this.fistName = fistName;
-        this.lastName = lastName;
-    }
-    walk() {
-        console.log('Walking');
-    }
-    get fullName() {
-        return this.fistName + " " + this.lastName;
+console.log('Abstraction in TypeScript');
+class Shape {
+    color;
+    constructor(color) {
+        this.color = color;
     }
 }
-class Student extends Person {
-    studentId;
-    constructor(studentId, firstName, lastName) {
-        super(firstName, lastName);
-        this.studentId = studentId;
+class Circle extends Shape {
+    radius;
+    constructor(radius, color) {
+        super(color);
+        this.radius = radius;
     }
-    takeTest() {
-        this.walk();
-        console.log('taking a test');
-    }
-}
-class Teacher extends Person {
-    get fullName() {
-        return "Professor " + super.fullName;
+    render() {
+        console.log('Rendering a circle ...');
     }
 }
-class Principal extends Person {
-    get fullName() {
-        return "Principal " + super.fullName;
-    }
-}
-function printNames(people) {
-    for (let person of people) {
-        console.log(person.fullName);
-    }
-}
-Student;
-Teacher;
-printNames([
-    new Student(1, 'amir', 'taki'),
-    new Teacher('mani', 'saniz'),
-    new Student(2, 'raha', 'porian'),
-    new Principal('shayan', 'proina')
-]);
+let circle = new Circle(2, 'gray');
+circle.render();
 //# sourceMappingURL=index.js.map
