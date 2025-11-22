@@ -1,16 +1,22 @@
-console.log('Modifier in TypeScript')
+console.log('Access Control Modifier  in TypeScript')
+
+// 3 access modifier
+// 1- public 
+// 2- private
+// 3- protected
+
 
 class Account {
     readonly id: number ;
     name: string;
     nickname?: string;
-    balance: number;
+    private _balance: number;
     
     // property
     constructor(id: number, name: string, balance: number){
         this.id = id;
         this.name = name;
-        this.balance = balance
+        this._balance = balance
     }
     // method 
     deposite(amount: number): void {
@@ -18,15 +24,23 @@ class Account {
         {
             throw new Error('Invalid amount')
         }
-       
-        this.balance += amount;
+        this.calculateTax()
+        this._balance += amount;
+    }
+
+    getBalace (): number {
+        return this._balance;
+    }
+
+
+    private calculateTax () {
+
     }
 }
 
-const account =  new Account(1, 'amir', 0);
+const account =  new Account(1, 'amir', 100);
 
-console.log(account instanceof Account)
+// account.balance  private  access modifier
+account
+console.log(account.getBalace())
 
-account.nickname = 'alpha'
-
-console.log(account)
