@@ -1,15 +1,15 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-console.log('Access Control Modifier  in TypeScript');
+console.log('Property parameter Modifier in TypeScript');
 class Account {
     id;
     name;
-    nickname;
     _balance;
-    constructor(id, name, balance) {
+    nickname;
+    constructor(id, name, _balance) {
         this.id = id;
         this.name = name;
-        this._balance = balance;
+        this._balance = _balance;
     }
     deposite(amount) {
         if (amount <= 0) {
