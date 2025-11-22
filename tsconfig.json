@@ -52,5 +52,7 @@
     "strictNullChecks": true,
 
     "allowUnreachableCode": false,
+
+    "noImplicitOverride": true
   }
 }

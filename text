@@ -45,3 +45,7 @@ Nullable types:
 
 unknown:
 1- "allowUnreachableCode": true,
+
+
+override the method definition in obj:
+1- "noImplicitOverride": true

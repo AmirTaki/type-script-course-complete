@@ -1,4 +1,4 @@
-console.log('Inheritance in TypeScript')
+console.log('override the method definition in TypeScript')
 
 //It is inherited from a class called a parent or super.
 
@@ -35,8 +35,15 @@ class Student extends Person {
     }
 }
 
+class Teacher extends Person {
+    override get fullName(): string {
+        // return "Professor " + this.fistName +" "  +this.lastName
+        return "Professor " + super.fullName
+    }
+}
 
 
-const student =  new Student (1, 'amir', 'taki')
+Student;
 
-console.log(student)
+const teacher = new Teacher('amir', 'taki')
+console.log(teacher.fullName)

@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-console.log('Inheritance in TypeScript');
+console.log('override the method definition in TypeScript');
 class Person {
     fistName;
     lastName;
@@ -25,6 +25,12 @@ class Student extends Person {
         console.log('taking a test');
     }
 }
-const student = new Student(1, 'amir', 'taki');
-console.log(student);
+class Teacher extends Person {
+    get fullName() {
+        return "Professor " + super.fullName;
+    }
+}
+Student;
+const teacher = new Teacher('amir', 'taki');
+console.log(teacher.fullName);
 //# sourceMappingURL=index.js.map
