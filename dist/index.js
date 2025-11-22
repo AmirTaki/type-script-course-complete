@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-console.log('Polymorphism object in TypeScript');
+console.log('protected Modifire in TypeScript');
 class Person {
     fistName;
     lastName;
@@ -22,6 +22,7 @@ class Student extends Person {
         this.studentId = studentId;
     }
     takeTest() {
+        this.walk();
         console.log('taking a test');
     }
 }

@@ -1,13 +1,18 @@
-console.log('Polymorphism object in TypeScript')
+console.log('protected Modifire in TypeScript')
 
-//It is inherited from a class called a parent or super.
+// access modifire 
+/*
+1- public 
+2- private
+3- protected
 
-//The class it inherits from is called a child, derived, or sub.
 
+Private members cannot be inherited, but protected members can be inherited.
+A protected member is accessible from within the class and inheritance, but not outside the class.
 
-
-// POLYMORPHISM ::: 
-// The concept of polymorphism refers to the situation where objects can take on different shapes.
+important:
+We use protected members when we need them.
+*/
 
 class Person {
     constructor(
@@ -15,7 +20,7 @@ class Person {
         public lastName:string 
     ){}
 
-    walk(){
+    protected walk(){
         console.log('Walking')
     }
 
@@ -35,6 +40,7 @@ class Student extends Person {
     }
 
     takeTest() {
+        this.walk()
         console.log('taking a test')
     }
 }
