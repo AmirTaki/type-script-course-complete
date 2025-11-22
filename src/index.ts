@@ -1,49 +1,26 @@
-console.log('Getter & Setter Modifier in TypeScript')
+console.log('Dynamic property in TypeScript')
 
-class Account {
-    nickname?: string;    
-    // property
-    constructor(
-        public readonly id: number, 
-        public name: string, 
-        private _balance: number, 
-    ){}
-    // method 
-    deposite(amount: number): void {
-        if(amount <= 0)
-            {
-                throw new Error('Invalid amount')
-            }
-            this.calculateTax()
-            this._balance += amount;
-        }
-        
-    // getter
-    get balance (): number {
-        return this._balance;
-    }
-    
-    // setter
-    set balance (value: number) {
-        if(value < 0)
-            throw new Error ('Invalid value')
-        this._balance = value
-    }
+// let person = {};
+// person.name = "amir"
 
-    private calculateTax () {
-        
-    }
+
+class SetAssignment {
+    // constructor(){}
+    [seatNumber: string]: string;  // index signature property
+  
 }
 
-const account =  new Account(1, 'amir', 100);
+let setas = new SetAssignment()
 
-console.log(account)
-account.balance = 200;
-console.log(account.balance)
+setas.A1 = "Amir";
+setas.A2 = "Mani"
+setas['A3'] = 'hana'
+// setas.A4 = 2 
 
 
-// 3 access modifier
-// 1- public 
-// 2- private
-// 3- protected
+console.log(setas)
+console.log(setas.A1)
+console.log(setas?.["A2"])
+console.log(setas.A3)
 
+// a1, a2, ...
