@@ -1,34 +1,42 @@
-console.log('Static members in TypeScript')
+console.log('Inheritance in TypeScript')
 
-class Ride {
-    activeRids: number = 0;
-    private static _counter:number = 0
+//It is inherited from a class called a parent or super.
 
-    
-    static get counter () :number {
-        return this._counter;
+//The class it inherits from is called a child, derived, or sub.
+
+
+class Person {
+    constructor(
+        public fistName:string,
+        public lastName:string 
+    ){}
+
+    walk(){
+        console.log('Walking')
     }
 
-    static set counter(value: number) {
-        this._counter = value
+    get fullName (): string {
+        return this.fistName + " " + this.lastName;
     }
-
-    start() {this.activeRids ++, Ride._counter ++};
-    stop() {this.activeRids --};
 
 }
 
-let ride1 = new Ride();
-ride1.start()
+class Student extends Person {
+    constructor(
+            public studentId: number, 
+            firstName: string,  // // not access no modifre becuse Inhertance
+            lastName: string   // not access no modifre becuse Inhertance
+    ){
+        super(firstName, lastName)
+    }
 
-let ride2 = new Ride();
-ride2.start()
+    takeTest() {
+        console.log('taking a test')
+    }
+}
 
 
-console.log(ride1.activeRids)
-console.log(ride2.activeRids)
 
-console.log("conter:"+ Ride.counter)
+const student =  new Student (1, 'amir', 'taki')
 
-Ride.counter = 100;
-console.log(Ride.counter)
+console.log(student)

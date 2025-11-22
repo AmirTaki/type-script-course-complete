@@ -1,27 +1,30 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-console.log('Static members in TypeScript');
-class Ride {
-    activeRids = 0;
-    static _counter = 0;
-    static get counter() {
-        return this._counter;
+console.log('Inheritance in TypeScript');
+class Person {
+    fistName;
+    lastName;
+    constructor(fistName, lastName) {
+        this.fistName = fistName;
+        this.lastName = lastName;
     }
-    static set counter(value) {
-        this._counter = value;
+    walk() {
+        console.log('Walking');
     }
-    start() { this.activeRids++, Ride._counter++; }
-    ;
-    stop() { this.activeRids--; }
-    ;
+    get fullName() {
+        return this.fistName + " " + this.lastName;
+    }
 }
-let ride1 = new Ride();
-ride1.start();
-let ride2 = new Ride();
-ride2.start();
-console.log(ride1.activeRids);
-console.log(ride2.activeRids);
-console.log("conter:" + Ride.counter);
-Ride.counter = 100;
-console.log(Ride.counter);
+class Student extends Person {
+    studentId;
+    constructor(studentId, firstName, lastName) {
+        super(firstName, lastName);
+        this.studentId = studentId;
+    }
+    takeTest() {
+        console.log('taking a test');
+    }
+}
+const student = new Student(1, 'amir', 'taki');
+console.log(student);
 //# sourceMappingURL=index.js.map
