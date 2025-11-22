@@ -1,20 +1,41 @@
-console.log('Generic Class  in TypeScript')
+console.log('Generic Function  in TypeScript')
 
 
-class KeyValuePair <K, V>{
-    
-    // constructor(public key: number, public value: string){}
+// function wrapInArray  (value: number): number[]{
+//    return [value] 
+// }
 
-    constructor(public key: K, public value: V){}
+function wrapInArray <T> (value: T): T[]{
+   return [value] 
 }
 
-let pair = new KeyValuePair<number, string>(1, 'microsoft')
 
-let pair2 = new KeyValuePair<string, string>("A", "google")
+let numbers = wrapInArray <number>(1)
+console.log(numbers)
 
-let pair3 = new KeyValuePair ('B', true)
+let strings = wrapInArray <string> ('A')
+console.log(strings)
+
+let bool = wrapInArray (true);
+console.log(bool)
 
 
-console.log(pair)
-console.log(pair2)
-console.log(pair3)
+
+class ArrayUtils {
+    
+    wrapInArray <T> (value: T): T[]{
+        return [value] 
+    }
+
+    static methodInArray <T> (value: T): T[]{
+        return [value]
+    }
+}
+
+
+let utils = new ArrayUtils()
+let utl =  utils.wrapInArray<number>(100)
+console.log(utl)
+
+let Generate = ArrayUtils.methodInArray <string>('method static in Class')
+console.log(Generate)

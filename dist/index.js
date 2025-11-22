@@ -1,18 +1,26 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-console.log('Generic Class  in TypeScript');
-class KeyValuePair {
-    key;
-    value;
-    constructor(key, value) {
-        this.key = key;
-        this.value = value;
+console.log('Generic Function  in TypeScript');
+function wrapInArray(value) {
+    return [value];
+}
+let numbers = wrapInArray(1);
+console.log(numbers);
+let strings = wrapInArray('A');
+console.log(strings);
+let bool = wrapInArray(true);
+console.log(bool);
+class ArrayUtils {
+    wrapInArray(value) {
+        return [value];
+    }
+    static methodInArray(value) {
+        return [value];
     }
 }
-let pair = new KeyValuePair(1, 'microsoft');
-let pair2 = new KeyValuePair("A", "google");
-let pair3 = new KeyValuePair('B', true);
-console.log(pair);
-console.log(pair2);
-console.log(pair3);
+let utils = new ArrayUtils();
+let utl = utils.wrapInArray(100);
+console.log(utl);
+let Generate = ArrayUtils.methodInArray('method static in Class');
+console.log(Generate);
 //# sourceMappingURL=index.js.map
