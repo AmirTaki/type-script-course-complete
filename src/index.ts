@@ -1,41 +1,62 @@
-console.log('Generic Function  in TypeScript')
+console.log('Generic Interface  in TypeScript')
+
+interface Result <T>{
+    data : T | null;
+    error: string | null
+}
+
+interface User {
+    username: string;
+}
+
+interface Proudct {
+    title: string
+}
+
+const fetch =  <T> (url: string): Result<T> => {
+    url;
+    return {data: null, error :null}
+}
 
 
-// function wrapInArray  (value: number): number[]{
-//    return [value] 
+
+
+fetch<boolean>('')
+
+fetch<User>('url')
+
+fetch<Proudct>('url')
+
+
+
+
+
+
+
+
+// interface Result <T> {
+//     // data: User
+//     data: T | null,
+//     error: string | null
 // }
 
-function wrapInArray <T> (value: T): T[]{
-   return [value] 
-}
+
+// interface User {
+//     username: string;
+// }
+
+// interface Product {
+//     title: string 
+// }
+
+// function fetch <T> (url: string): Result<T> {
+//     url;
+//     return {data: null, error: null}
+// }
 
 
-let numbers = wrapInArray <number>(1)
-console.log(numbers)
-
-let strings = wrapInArray <string> ('A')
-console.log(strings)
-
-let bool = wrapInArray (true);
-console.log(bool)
 
 
+// fetch <User>("url")
 
-class ArrayUtils {
-    
-    wrapInArray <T> (value: T): T[]{
-        return [value] 
-    }
-
-    static methodInArray <T> (value: T): T[]{
-        return [value]
-    }
-}
-
-
-let utils = new ArrayUtils()
-let utl =  utils.wrapInArray<number>(100)
-console.log(utl)
-
-let Generate = ArrayUtils.methodInArray <string>('method static in Class')
-console.log(Generate)
+// fetch <Product>('url')
