@@ -1,26 +1,34 @@
-console.log('Dynamic property in TypeScript')
+console.log('Static members in TypeScript')
 
-// let person = {};
-// person.name = "amir"
+class Ride {
+    activeRids: number = 0;
+    private static _counter:number = 0
 
+    
+    static get counter () :number {
+        return this._counter;
+    }
 
-class SetAssignment {
-    // constructor(){}
-    [seatNumber: string]: string;  // index signature property
-  
+    static set counter(value: number) {
+        this._counter = value
+    }
+
+    start() {this.activeRids ++, Ride._counter ++};
+    stop() {this.activeRids --};
+
 }
 
-let setas = new SetAssignment()
+let ride1 = new Ride();
+ride1.start()
 
-setas.A1 = "Amir";
-setas.A2 = "Mani"
-setas['A3'] = 'hana'
-// setas.A4 = 2 
+let ride2 = new Ride();
+ride2.start()
 
 
-console.log(setas)
-console.log(setas.A1)
-console.log(setas?.["A2"])
-console.log(setas.A3)
+console.log(ride1.activeRids)
+console.log(ride2.activeRids)
 
-// a1, a2, ...
+console.log("conter:"+ Ride.counter)
+
+Ride.counter = 100;
+console.log(Ride.counter)
