@@ -1,9 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-console.log('Object creation in TypeScript');
+console.log('Modifier in TypeScript');
 class Account {
     id;
     name;
+    nickname;
     balance;
     constructor(id, name, balance) {
         this.id = id;
@@ -18,10 +19,7 @@ class Account {
     }
 }
 const account = new Account(1, 'amir', 0);
-console.log(account);
-console.log(account.name);
-account.deposite(100);
-console.log(account.balance);
-console.log(typeof account);
 console.log(account instanceof Account);
+account.nickname = 'alpha';
+console.log(account);
 //# sourceMappingURL=index.js.map

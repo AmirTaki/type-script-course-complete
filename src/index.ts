@@ -1,10 +1,11 @@
-console.log('Object creation in TypeScript')
+console.log('Modifier in TypeScript')
 
 class Account {
-    id: number ;
+    readonly id: number ;
     name: string;
+    nickname?: string;
     balance: number;
-
+    
     // property
     constructor(id: number, name: string, balance: number){
         this.id = id;
@@ -24,14 +25,8 @@ class Account {
 
 const account =  new Account(1, 'amir', 0);
 
-console.log(account)
-
-console.log(account.name)
-
-account.deposite(100)
-
-console.log(account.balance)
-
-console.log(typeof account)
-
 console.log(account instanceof Account)
+
+account.nickname = 'alpha'
+
+console.log(account)
