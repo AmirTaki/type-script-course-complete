@@ -1,7 +1,6 @@
 type script : 
 youtube : 
-https://www.youtube.com/watch?v=i8q_UETcsVc&list=PLTEzTFAAzxQ6yvftZpvM2LJCv6b4zYVhJ&index=4
-20:16
+https://www.youtube.com/watch?v=DsHrx_7My0M&list=PLTEzTFAAzxQ6yvftZpvM2LJCv6b4zYVhJ&index=4
 
 install : 
 1- npm i -g typescript
