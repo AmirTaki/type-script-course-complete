@@ -1,4 +1,4 @@
-console.log('Passing parameters to decorator in TypeScript')
+console.log('Decorator combination in TypeScript')
 
 type ComponentOptions = {
     selector: string,
@@ -20,9 +20,17 @@ function Component (options: ComponentOptions) {
     }
 }
 
+
+function Pipe (constractor: Function){
+    console.log("Pipe decorator called")
+    constractor.prototype.pipe = true;
+}
+
+@Pipe
 @Component({selector : "#profile-img"})
 class ProfileComponent {
 
 }
 new ProfileComponent();
 
+// Descriptors are implemented with reverse composition.  => f(g(x))

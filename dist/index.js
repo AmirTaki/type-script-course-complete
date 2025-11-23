@@ -6,7 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-console.log('Passing parameters to decorator in TypeScript');
+console.log('Decorator combination in TypeScript');
 function Component(options) {
     return (constracutor) => {
         console.log('Component decorator called');
@@ -17,9 +17,14 @@ function Component(options) {
         };
     };
 }
+function Pipe(constractor) {
+    console.log("Pipe decorator called");
+    constractor.prototype.pipe = true;
+}
 let ProfileComponent = class ProfileComponent {
 };
 ProfileComponent = __decorate([
+    Pipe,
     Component({ selector: "#profile-img" })
 ], ProfileComponent);
 new ProfileComponent();
