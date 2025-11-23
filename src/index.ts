@@ -1,36 +1,31 @@
-console.log('Decorator combination in TypeScript')
+console.log(' method decorator in TypeScript')
 
-type ComponentOptions = {
-    selector: string,
+// Each property in a JavaScript object has an object descriptor that describes it.
+// The number and type are important for function descriptors, not the name.
+
+function Log (target: any, methodName: string, desciptor: PropertyDescriptor) {
+    const original = desciptor.value as Function;
+
+    desciptor.value  = function (...args: any) {
+        console.log("Before")
+        original.call(this, ...args)
+        console.log('After')
+    }
+
+    methodName;
+    target;
+
+
 
 }
 
-// decorator factory
 
-function Component (options: ComponentOptions) {
-
-    return  (constracutor: Function) => {
-        console.log('Component decorator called')
-        constracutor.prototype.options = options;
-        constracutor.prototype.uniqueId = Date.now()
-
-        constracutor.prototype.insertInDom = () => {
-            console.log('Inserting the component in the DOM')
-        }
+class Person {
+    @Log
+    say(message: string, id: number)  {
+        console.log("Person says " + message + `, id : ${id}`);
     }
 }
 
-
-function Pipe (constractor: Function){
-    console.log("Pipe decorator called")
-    constractor.prototype.pipe = true;
-}
-
-@Pipe
-@Component({selector : "#profile-img"})
-class ProfileComponent {
-
-}
-new ProfileComponent();
-
-// Descriptors are implemented with reverse composition.  => f(g(x))
+let person = new Person()
+person.say('Hello',1 )

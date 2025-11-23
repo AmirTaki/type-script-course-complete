@@ -6,26 +6,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-console.log('Decorator combination in TypeScript');
-function Component(options) {
-    return (constracutor) => {
-        console.log('Component decorator called');
-        constracutor.prototype.options = options;
-        constracutor.prototype.uniqueId = Date.now();
-        constracutor.prototype.insertInDom = () => {
-            console.log('Inserting the component in the DOM');
-        };
+console.log(' method decorator in TypeScript');
+function Log(target, methodName, desciptor) {
+    const original = desciptor.value;
+    desciptor.value = function (...args) {
+        console.log("Before");
+        original.call(this, ...args);
+        console.log('After');
     };
+    methodName;
+    target;
 }
-function Pipe(constractor) {
-    console.log("Pipe decorator called");
-    constractor.prototype.pipe = true;
+class Person {
+    say(message, id) {
+        console.log("Person says " + message + `, id : ${id}`);
+    }
 }
-let ProfileComponent = class ProfileComponent {
-};
-ProfileComponent = __decorate([
-    Pipe,
-    Component({ selector: "#profile-img" })
-], ProfileComponent);
-new ProfileComponent();
+__decorate([
+    Log
+], Person.prototype, "say", null);
+let person = new Person();
+person.say('Hello', 1);
 //# sourceMappingURL=index.js.map
