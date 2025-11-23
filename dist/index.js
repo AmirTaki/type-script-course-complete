@@ -5,31 +5,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-console.log('property decorator in type script');
-function MinLength(lenght) {
-    return (target, propertyName) => {
-        let value;
-        const descriptor = {
-            get() { return value; },
-            set(newValue) {
-                if (newValue.length < lenght)
-                    throw new Error(`${propertyName}  should be at least ${lenght} characters long`);
-                value = newValue;
-            }
-        };
-        Object.defineProperty(target, propertyName, descriptor);
-    };
+console.log('parameter decorator in type script');
+const watchedParameters = [];
+function Watch(target, methodName, parmeterIndex) {
+    watchedParameters.push({
+        methodName,
+        parmeterIndex
+    });
+    target;
 }
-class User {
-    password;
-    constructor(password) {
-        this.password = password;
-    }
+class vehicle {
+    move(speed) { speed; }
 }
 __decorate([
-    MinLength(4)
-], User.prototype, "password", void 0);
-let uesr = new User('123456');
-console.log(uesr.password);
+    __param(0, Watch)
+], vehicle.prototype, "move", null);
+new vehicle();
+console.log(watchedParameters);
 //# sourceMappingURL=index.js.map

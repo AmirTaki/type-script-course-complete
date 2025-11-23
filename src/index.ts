@@ -1,30 +1,25 @@
-console.log('property decorator in type script')
+console.log('parameter decorator in type script')
 
-function MinLength (lenght: number){
-    return (target: any, propertyName: string ) => {
-    
-        let value: string;
-        const descriptor: PropertyDescriptor = {
-            get () {return value},
-            set(newValue: string) {
-                if (newValue.length < lenght)
-                    throw new Error (`${propertyName}  should be at least ${lenght} characters long`)
-                value = newValue;
-            }
-        }
-        Object.defineProperty(target, propertyName, descriptor)
-    }
+type WatchedParameter = {
+    methodName: string, 
+    parmeterIndex: number
+}
+
+const watchedParameters: WatchedParameter[] = []
+
+function Watch (target: any, methodName: string, parmeterIndex: number  ) {
+    watchedParameters.push({
+        methodName, 
+        parmeterIndex
+    });
+    target
 }
 
 
-class User {
-    @MinLength(4)
-    password: string;
+class vehicle {
+    move(@Watch speed: number){speed;}
 
-    constructor(password: string){
-        this.password = password
-    }
 }
 
-let uesr = new User('123456')
-console.log(uesr.password)
+new vehicle()
+console.log(watchedParameters)
