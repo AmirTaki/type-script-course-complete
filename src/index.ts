@@ -1,41 +1,60 @@
-console.log('Inheritance in generic classes  in TypeScript')
+console.log(' type mapping Generic in TypeScript')
 
 interface Product {
     name: string, 
     price: number
 }
-// 1
-class Store <T> {
-    protected _objects: T[] = [];
 
-    add (obj: T): void{
-        this._objects.push(obj)
-    };
+// keyof Product => name , price
+
+/// type maping
+
+type ReadOnlyProduct = {
+    readonly [k in keyof Product]: Product[k]  
 }
 
-class CompressibleStore <T> extends Store <T> {
-    compress() {}
-}
- 
-let store =  new CompressibleStore <Product>()
-store;
 
-//  2
-class SearchableStore <T extends {name: string}> extends Store <T> {
-    find(name: string) : T | undefined {
-        return this._objects.find((obj) => obj.name === name);
-    } 
+let product: ReadOnlyProduct = {
+    name : 'amir', price : 1
 }
 
-new SearchableStore <Product>()
+
+console.log(product)
 
 
-// 3
-class ProductStore extends Store <Product>{
-    filterByCategory(category: string): Product[]{
-        category;
-        return []
-    }
+// generic
+
+type ReadOnly<T>  = {
+    readonly [k in keyof T]: T[k]
 }
 
-new ProductStore()
+
+let perons: ReadOnly<Product> = {
+    name : 'mani', 
+    price : 2
+}
+
+
+console.log(perons)
+
+// optional
+
+type Optional <T> =  {
+    [K in keyof T]? : T[K] 
+}
+
+let option : Optional <Product> = {
+    name : 'sara',
+}
+console.log(option)
+
+
+// Nullable
+
+type Nullable<T> = {
+    [K in keyof T]?: T[K] | null
+}
+
+let nun : Nullable<Product> = {}
+
+console.log(nun)
