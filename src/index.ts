@@ -1,54 +1,41 @@
-console.log('Apply restrictions  in TypeScript')
+console.log('Inheritance in generic classes  in TypeScript')
 
+interface Product {
+    name: string, 
+    price: number
+}
+// 1
+class Store <T> {
+    protected _objects: T[] = [];
 
-// const echo = <T>(value: T):T => {
-//     return value
-// }
-
-
-
-// extends 
-function echo<T extends number | string> (value: T): T {
-    return value;
+    add (obj: T): void{
+        this._objects.push(obj)
+    };
 }
 
-echo<number>(1)
-echo<string>("1")
-// echo<boolean>(true)
+class CompressibleStore <T> extends Store <T> {
+    compress() {}
+}
+ 
+let store =  new CompressibleStore <Product>()
+store;
 
-
-//  extend in object
-function echo2 <T extends {name: string}> (value: T): T{
-    return value;
+//  2
+class SearchableStore <T extends {name: string}> extends Store <T> {
+    find(name: string) : T | undefined {
+        return this._objects.find((obj) => obj.name === name);
+    } 
 }
 
-echo2({name: 'amir'})
+new SearchableStore <Product>()
 
 
-// extend in interface
-interface Person{
-    name: string
+// 3
+class ProductStore extends Store <Product>{
+    filterByCategory(category: string): Product[]{
+        category;
+        return []
+    }
 }
 
-function echo3 <T extends Person> (value: T): T{
-    return value;
-}
-
-echo3({name: "mani"})
-
-
-// extend in class
-class People {
-    constructor (public name : string){}
-}
-
-
-class Customer extends People{}
-
-const echo4 = <T extends People> (value: T): T => {
-    return value
-}
-
-echo4(new People('amir'))
-
-echo4(new Customer('mani'))
+new ProductStore()

@@ -1,30 +1,29 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-console.log('Apply restrictions  in TypeScript');
-function echo(value) {
-    return value;
+console.log('Inheritance in generic classes  in TypeScript');
+class Store {
+    _objects = [];
+    add(obj) {
+        this._objects.push(obj);
+    }
+    ;
 }
-echo(1);
-echo("1");
-function echo2(value) {
-    return value;
+class CompressibleStore extends Store {
+    compress() { }
 }
-echo2({ name: 'amir' });
-function echo3(value) {
-    return value;
-}
-echo3({ name: "mani" });
-class People {
-    name;
-    constructor(name) {
-        this.name = name;
+let store = new CompressibleStore();
+store;
+class SearchableStore extends Store {
+    find(name) {
+        return this._objects.find((obj) => obj.name === name);
     }
 }
-class Customer extends People {
+new SearchableStore();
+class ProductStore extends Store {
+    filterByCategory(category) {
+        category;
+        return [];
+    }
 }
-const echo4 = (value) => {
-    return value;
-};
-echo4(new People('amir'));
-echo4(new Customer('mani'));
+new ProductStore();
 //# sourceMappingURL=index.js.map
