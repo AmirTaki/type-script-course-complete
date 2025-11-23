@@ -6,25 +6,30 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-console.log(' method decorator in TypeScript');
-function Log(target, methodName, desciptor) {
-    const original = desciptor.value;
-    desciptor.value = function (...args) {
-        console.log("Before");
-        original.call(this, ...args);
-        console.log('After');
+console.log('accessor decorator in TypeScript');
+function Capitalize(target, methodName, descriptor) {
+    const orginal = descriptor.get;
+    descriptor.get = function () {
+        const result = orginal?.call(this);
+        return typeof result === 'string' ? result.toUpperCase() : result;
     };
     methodName;
     target;
 }
 class Person {
-    say(message, id) {
-        console.log("Person says " + message + `, id : ${id}`);
+    firstName;
+    lastName;
+    constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    get fullName() {
+        return `${this.firstName} ${this.lastName}`;
     }
 }
 __decorate([
-    Log
-], Person.prototype, "say", null);
-let person = new Person();
-person.say('Hello', 1);
+    Capitalize
+], Person.prototype, "fullName", null);
+const person = new Person("amir", 'taki');
+console.log(person.fullName);
 //# sourceMappingURL=index.js.map
