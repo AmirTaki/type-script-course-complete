@@ -53,6 +53,11 @@
 
     "allowUnreachableCode": false,
 
-    "noImplicitOverride": true
+    "noImplicitOverride": true,
+
+    "experimentalDecorators": true,
+
+  
+    
   }
 }

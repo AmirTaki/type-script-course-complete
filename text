@@ -1,7 +1,6 @@
 type script : 
 youtube : 
-https://www.youtube.com/watch?v=DsHrx_7My0M&list=PLTEzTFAAzxQ6yvftZpvM2LJCv6b4zYVhJ&index=4
-14:07
+https://www.youtube.com/watch?v=eWFXWAbvBhU&list=PLTEzTFAAzxQ6yvftZpvM2LJCv6b4zYVhJ&index=5
 
 install : 
 1- npm i -g typescript
@@ -49,3 +48,7 @@ unknown:
 
 override the method definition in obj:
 1- "noImplicitOverride": true
+
+
+decorator : 
+1- "experimentalDecorators": true,
