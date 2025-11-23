@@ -6,18 +6,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-console.log('class decorator in TypeScript');
-function Component(constructor) {
-    console.log('Component decorator called');
-    constructor.prototype.uniqueId = Date.now();
-    constructor.prototype.insertInDom = () => {
-        console.log('Inserting the component in the DOM');
+console.log('Passing parameters to decorator in TypeScript');
+function Component(options) {
+    return (constracutor) => {
+        console.log('Component decorator called');
+        constracutor.prototype.options = options;
+        constracutor.prototype.uniqueId = Date.now();
+        constracutor.prototype.insertInDom = () => {
+            console.log('Inserting the component in the DOM');
+        };
     };
 }
 let ProfileComponent = class ProfileComponent {
 };
 ProfileComponent = __decorate([
-    Component
+    Component({ selector: "#profile-img" })
 ], ProfileComponent);
 new ProfileComponent();
 //# sourceMappingURL=index.js.map

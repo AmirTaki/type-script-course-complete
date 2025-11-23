@@ -1,23 +1,28 @@
-console.log('class decorator in TypeScript')
- 
-//  Prototype:  Every object in JavaScript has a prototype from which it inherits its properties and methods.
-function Component (constructor: Function):  void{
-    console.log('Component decorator called');
-    constructor.prototype.uniqueId = Date.now()
+console.log('Passing parameters to decorator in TypeScript')
 
-    constructor.prototype.insertInDom = () => {
-        console .log('Inserting the component in the DOM')
-    }
+type ComponentOptions = {
+    selector: string,
 
 }
 
-@Component
+// decorator factory
+
+function Component (options: ComponentOptions) {
+
+    return  (constracutor: Function) => {
+        console.log('Component decorator called')
+        constracutor.prototype.options = options;
+        constracutor.prototype.uniqueId = Date.now()
+
+        constracutor.prototype.insertInDom = () => {
+            console.log('Inserting the component in the DOM')
+        }
+    }
+}
+
+@Component({selector : "#profile-img"})
 class ProfileComponent {
 
 }
 new ProfileComponent();
 
-
-// Whether we have created an instance or not, the destructor is called.
-
-// The declarator that we apply to a class is actually a function that our class calls as a declarator.
