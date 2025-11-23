@@ -1,29 +1,18 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-console.log('Inheritance in generic classes  in TypeScript');
+console.log('keyof generic  in TypeScript');
 class Store {
     _objects = [];
     add(obj) {
         this._objects.push(obj);
     }
     ;
-}
-class CompressibleStore extends Store {
-    compress() { }
-}
-let store = new CompressibleStore();
-store;
-class SearchableStore extends Store {
-    find(name) {
-        return this._objects.find((obj) => obj.name === name);
+    find(property, value) {
+        return this._objects.find(obj => obj[property] == value);
     }
 }
-new SearchableStore();
-class ProductStore extends Store {
-    filterByCategory(category) {
-        category;
-        return [];
-    }
-}
-new ProductStore();
+let store = new Store();
+store.add({ name: 'amir', price: 1 });
+console.log(store.find('name', 'amir'));
+console.log(store.find('price', 1));
 //# sourceMappingURL=index.js.map
