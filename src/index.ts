@@ -1,9 +1,8 @@
-import { Circle, Square } from "./exportModule/shape"
+import * as Shapes from "./shapes"
+console.log('wildcard in type script')
 
-console.log('import & export in type script')
 
 
-const circle =  new  Circle(1)
-const square =  new Square (2)
 
-console.log(circle, square)
+new Shapes.Circle(1)
+new Shapes.Sqaure(1)

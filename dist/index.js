@@ -1,8 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const storage_1 = require("./storage");
-console.log('export default in type script');
-const store = new storage_1.default();
-console.log(store);
-console.log(storage_1.Format);
+const Shapes = require("./shapes");
+console.log('wildcard in type script');
+new Shapes.Circle(1);
+new Shapes.Sqaure(1);
 //# sourceMappingURL=index.js.map
