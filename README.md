@@ -1,3 +1,4 @@
+<p>
 27b6794  ==>  External packages in ts
 9e69c72  ==>  dec file in type script
 8e903ef  ==>  js doc in type script
@@ -63,3 +64,4 @@ d68ae6b  ==>  type Enum in typeScript
 6b1b3b7  ==>  Debugging
 56bf5fc  ==>  Configuring the TypeScript compiler part 1
 93506df  ==>  Create a project
+</p>
