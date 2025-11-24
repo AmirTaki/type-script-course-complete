@@ -1,2 +1,3 @@
-export function calculateTax(income: number): number;
+export function sayHello(): void;
+export function calculateTax(income: any): number;
 //# sourceMappingURL=tax.d.ts.map
