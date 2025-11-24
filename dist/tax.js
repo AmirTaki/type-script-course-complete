@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.calculateTax = calculateTax;
-function calculateTax(income) {
+function calculateTax(incom) {
     return income * .3;
 }
 //# sourceMappingURL=tax.js.map

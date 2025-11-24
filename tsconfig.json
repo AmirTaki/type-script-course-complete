@@ -59,7 +59,8 @@
 
     "moduleResolution": "node",
 
-    "allowJs": true
+    "allowJs": true, 
+    "checkJs": true
   
     
   }

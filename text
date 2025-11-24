@@ -65,3 +65,5 @@ Using JavaScript in typeScript:
 1- "allowJs": true
 2- "module": "commonjs",
 
+Disable type checking in type script:
+1- "checkJs": true

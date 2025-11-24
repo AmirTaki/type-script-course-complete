@@ -1,8 +1,8 @@
 import { calculateTax } from "./tax"
 
 
-console.log('Using JavaScript type script')
+console.log('Disable type checking in type script')
 
-const tax =  calculateTax(1000)
+const tax =  calculateTax(100)
 
 console.log(tax)
