@@ -1,9 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const shape = require("./exportModule/shape");
-console.log('import & export in type script');
-const circle = new shape.Circle(12);
-const square = new shape.Square(10);
-console.log(circle);
-console.log(square);
+const storage_1 = require("./storage");
+console.log('export default in type script');
+const store = new storage_1.default();
+console.log(store);
+console.log(storage_1.Format);
 //# sourceMappingURL=index.js.map
