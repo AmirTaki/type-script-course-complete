@@ -67,3 +67,9 @@ Using JavaScript in typeScript:
 
 Disable type checking in type script:
 1- "checkJs": true
+
+
+
+External packages in type script:
+1- npm i loadsh
+2- npm i -D @types/lodash
