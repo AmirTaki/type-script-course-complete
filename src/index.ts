@@ -1,25 +1,9 @@
-console.log('parameter decorator in type script')
+import { Circle, Square } from "./exportModule/shape"
 
-type WatchedParameter = {
-    methodName: string, 
-    parmeterIndex: number
-}
-
-const watchedParameters: WatchedParameter[] = []
-
-function Watch (target: any, methodName: string, parmeterIndex: number  ) {
-    watchedParameters.push({
-        methodName, 
-        parmeterIndex
-    });
-    target
-}
+console.log('import & export in type script')
 
 
-class vehicle {
-    move(@Watch speed: number){speed;}
+const circle =  new  Circle(1)
+const square =  new Square (2)
 
-}
-
-new vehicle()
-console.log(watchedParameters)
+console.log(circle, square)
