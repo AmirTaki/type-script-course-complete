@@ -51,4 +51,13 @@ override the method definition in obj:
 
 
 decorator : 
-1- "experimentalDecorators": true,
+1- "experimentalDecorators": true
+
+
+import & export: 
+1- "module": "none",
+2- "module": "ES6",
+
+
+re exporting:
+1- "moduleResolution": "node"

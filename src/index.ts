@@ -1,8 +1,10 @@
-import * as Shapes from "./shapes"
-console.log('wildcard in type script')
+import {Circle, Sqaure} from "./shapes"
+console.log('re exporting in type script')
+
+const circle =  new Circle (1)
+const sqaure =  new Sqaure(2)
 
 
 
-
-new Shapes.Circle(1)
-new Shapes.Sqaure(1)
+console.log(circle)
+console.log(sqaure)

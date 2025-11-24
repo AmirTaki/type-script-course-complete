@@ -1,13 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Sqaure = exports.Circle = void 0;
-class Circle {
-    radius;
-    constructor(radius) {
-        this.radius = radius;
-    }
-}
-exports.Circle = Circle;
+exports.Sqaure = void 0;
 class Sqaure {
     radius;
     constructor(radius) {
