@@ -57,7 +57,9 @@
 
     "experimentalDecorators": true,
 
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+
+    "allowJs": true
   
     
   }

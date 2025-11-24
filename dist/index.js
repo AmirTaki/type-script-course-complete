@@ -1,9 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const shapes_1 = require("./shapes");
-console.log('re exporting in type script');
-const circle = new shapes_1.Circle(1);
-const sqaure = new shapes_1.Sqaure(2);
-console.log(circle);
-console.log(sqaure);
+const tax_1 = require("./tax");
+console.log('Using JavaScript type script');
+const tax = (0, tax_1.calculateTax)(1000);
+console.log(tax);
 //# sourceMappingURL=index.js.map

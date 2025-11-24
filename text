@@ -1,7 +1,6 @@
 type script : 
 youtube : 
-https://www.youtube.com/watch?v=eWFXWAbvBhU&list=PLTEzTFAAzxQ6yvftZpvM2LJCv6b4zYVhJ&index=5
-
+https://www.youtube.com/watch?v=4ImsuPD-nmM&list=PLTEzTFAAzxQ6yvftZpvM2LJCv6b4zYVhJ&index=7
 install : 
 1- npm i -g typescript
 2- tsc -v
@@ -61,3 +60,8 @@ import & export:
 
 re exporting:
 1- "moduleResolution": "node"
+
+Using JavaScript in typeScript:
+1- "allowJs": true
+2- "module": "commonjs",
+

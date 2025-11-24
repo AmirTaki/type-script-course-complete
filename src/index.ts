@@ -1,10 +1,8 @@
-import {Circle, Sqaure} from "./shapes"
-console.log('re exporting in type script')
-
-const circle =  new Circle (1)
-const sqaure =  new Sqaure(2)
+import { calculateTax } from "./tax"
 
 
+console.log('Using JavaScript type script')
 
-console.log(circle)
-console.log(sqaure)
+const tax =  calculateTax(1000)
+
+console.log(tax)
