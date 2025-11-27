@@ -1,4 +1,5 @@
-
+<p>d832502 ==> Interface object oriented  in typeScript</p>
+<p>8270109 ==> Abstraction object oriented  in typeScript</p>
 <p>27b6794  ==>  External packages in ts
 </p><p>9e69c72  ==>  dec file in type script
 </p><p>8e903ef  ==>  js doc in type script
