@@ -1,24 +1,55 @@
-console.log(`Abstraction object oriented  in typeScript`)
+console.log(`Interface object oriented  in typeScript`)
 console.log("موارد جا مانده از شی گرایی")
 
+// abstract class CalendarClass {
+//     constructor(public name: string){}    
 
-abstract class Shape {
-    constructor(public color: string){}
+//     abstract addEvent(): void
+//     abstract removeEvent(): void
+// }
 
-    abstract render ():void
+// CalendarClass
+
+// interface
+
+interface Calendar{
+    name: string,
+
+    addEvent(): void;
+    removeEvent():void;
 }
 
-class Circle extends Shape {
-    constructor(public  radius:number, color: string){
-        super(color)
+interface Clude extends Calendar{
+    synce(): void;
+}
+
+
+class Google implements Calendar {
+    constructor(public name: string){}
+    addEvent(): void {
+        
     }
-    override render(): void {
-        console.log('render is circle')
+    removeEvent(): void {
+        
     }
 }
 
-// const shape =  new Shape('blue')
-// shape.render()
+class GoogleClude implements Clude{
+    constructor(public name: string) {}
 
-const circle = new Circle(12, 'red')
-circle.render()
+    addEvent(): void {
+        
+    }
+    removeEvent(): void {
+        
+    }
+    synce(): void {
+        
+    }
+}
+
+const google = new Google('google')
+console.log(google)
+
+const googleClude = new GoogleClude ('googleClude')
+console.log(googleClude)

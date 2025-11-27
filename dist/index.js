@@ -1,23 +1,31 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-console.log(`Abstraction object oriented  in typeScript`);
+console.log(`Interface object oriented  in typeScript`);
 console.log("موارد جا مانده از شی گرایی");
-class Shape {
-    color;
-    constructor(color) {
-        this.color = color;
+class Google {
+    name;
+    constructor(name) {
+        this.name = name;
+    }
+    addEvent() {
+    }
+    removeEvent() {
     }
 }
-class Circle extends Shape {
-    radius;
-    constructor(radius, color) {
-        super(color);
-        this.radius = radius;
+class GoogleClude {
+    name;
+    constructor(name) {
+        this.name = name;
     }
-    render() {
-        console.log('render is circle');
+    addEvent() {
+    }
+    removeEvent() {
+    }
+    synce() {
     }
 }
-const circle = new Circle(12, 'red');
-circle.render();
+const google = new Google('google');
+console.log(google);
+const googleClude = new GoogleClude('googleClude');
+console.log(googleClude);
 //# sourceMappingURL=index.js.map
